@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blinkr: Drive like you mean it</title>
+  </head>
+  <body>
+    <h1>Blinkr: Drive like you mean it</h1>
+    <p>Comment on a plate</p>
+        <form method="post">
+            State: <input type=text name="state" />
+            Number: <input type=text name="number" />
+            <input type=submit value="Submit" />
+        </form>
+    <p>Recent plates added</p>
+    <ul>
+        <% plates.forEach(function(plate) { %>
+        <li>
+            <a href="/plate/<%= plate.get('state') %>/<%= plate.get('number') %>">
+                <%= plate.get('state') %> <%= plate.get('number') %>
+            </a>
+        </li>
+        <% }); %>
+    </ul>
+  </body>
+</html>

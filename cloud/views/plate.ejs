@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>License Plate: <%= state %> <%= number %></title>
+  </head>
+  <body>
+    <h1>License Plate: <%= state %> <%= number %></h1>
+    <% if (comments.length > 0) { %>
+        <p>Here are your comments for <%= plate.get('state') %> <%= plate.get('number') %>...</p>
+        <ul>
+            <% comments.forEach(function(comment) { %>
+                <li><%= comment.get('text') %></li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No comments yet...</p>
+    <% } %>
+  </body>
+</html>
